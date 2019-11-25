@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PHP - Process form</title>
+</head>
+<body>
+	<button id="button">Get Name</button>
+
+	<script type="text/javascript">
+		document.getElementById('button').addEventListener('click', getName);
+
+		function getName() {
+			 var xhr = new XMLHttpRequest();
+			 xhr.open('GET', 'process.php?name=Brad', true);
+
+			 xhr.onload = function (){
+			 	console.log(this.responseText);
+			 }
+
+			 xhr.send();
+		}
+	</script>
+</body>
+</html>
